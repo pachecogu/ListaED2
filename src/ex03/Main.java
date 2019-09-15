@@ -21,6 +21,11 @@ public class Main {
             int cod;
             String nome;
             float preco;
+            
+            continua = Integer.parseInt(JOptionPane.showInputDialog("Deseja cadastrar um novo produto?\n"
+                    + "0 - Não\n"
+                    + "1 - Sim\n"));
+            
             cod = Integer.parseInt(JOptionPane.showInputDialog("Digite o cod do produto: "));
             nome = JOptionPane.showInputDialog("Digite a descrição: ");
             preco = Float.parseFloat(JOptionPane.showInputDialog("Digite o preço: "));
@@ -29,9 +34,7 @@ public class Main {
 
             lista.add(produto);
 
-            continua = Integer.parseInt(JOptionPane.showInputDialog("Deseja cadastrar um novo produto?\n"
-                    + "0 - Não\n"
-                    + "1 - Sim\n"));
+
             count++;
         }
 
