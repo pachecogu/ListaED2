@@ -13,7 +13,6 @@ public class Aluno {
         this.nome = nome;
         this.nota1 = nota1;
         this.nota2 = nota2;
-        this.setMedia(nota1, nota2);
         this.status = false;
     }
 
@@ -34,7 +33,7 @@ public class Aluno {
     }
     
     public void setMedia(float nota1, float nota2) {
-        this.media = ((nota1 * 2) + (nota2 * 3) / 5); 
+        media = ((nota1 * 2) + (nota2 * 3)) / 5;
     }
 
     public Boolean getStatus() {
@@ -43,7 +42,7 @@ public class Aluno {
 
     public void setStatus(float media ) {
         if(media >= 7)
-            this.status = true;   
+            this.status = true;
     }
     
 

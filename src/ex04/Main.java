@@ -1,6 +1,5 @@
 package ex04;
 
-
 import static ex04.Ordenacao.BubbleSortCrescente;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
@@ -20,15 +19,16 @@ public class Main {
             String nome;
             float nota1;
             float nota2;
-            
+
             nome = JOptionPane.showInputDialog("Digite o nome do aluno: ");
             nota1 = Float.parseFloat(JOptionPane.showInputDialog("Digite a primeira nota do aluno: "));
             nota2 = Float.parseFloat(JOptionPane.showInputDialog("Digite a segunda nota do aluno: "));
-            
 
             Aluno aluno = new Aluno(nome, nota1, nota2);
-
+            
             lista.add(aluno);
+            
+            lista.get(count).setMedia(nota1, nota2);       
 
             continua = Integer.parseInt(JOptionPane.showInputDialog("Deseja cadastrar um novo aluno?\n"
                     + "0 - Não\n"
@@ -37,7 +37,7 @@ public class Main {
         }
 
         BubbleSortCrescente(lista); //Ordenando alunos pela média
-        
+
         //Exibindo alunos pela média ponderada
         int i;
         String resposta = " ";
@@ -46,17 +46,6 @@ public class Main {
         }
         JOptionPane.showMessageDialog(null, resposta);
 
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
 //        //Quantas comparações pela busca binaria
 //        int desejado;
 //        desejado = Integer.parseInt(JOptionPane.showInputDialog("Digite o cod do produto desejado: "));
@@ -77,7 +66,6 @@ public class Main {
 //            resposta += i + 1 + " - " + lista.get(i).toString() + "\n";
 //        }
 //        JOptionPane.showMessageDialog(null, resposta);
-
     }
 
 }

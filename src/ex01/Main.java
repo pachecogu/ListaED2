@@ -12,15 +12,21 @@ public class Main {
     public static void main(String[] args) {
 
         int continua = 1;
+        int count = 0;
         String resposta;
 
         ArrayList<Funcionario> lista;
-        lista = new ArrayList();
+        lista = new ArrayList(5);
 
-        while (continua == 1) {
+        while (continua == 1 && count < 5) {
 
             String nome;
             float salario;
+            
+            continua = Integer.parseInt(JOptionPane.showInputDialog("Deseja cadastrar um novo funcionário?\n"
+                    + "0 - Não\n"
+                    + "1 - Sim\n"));
+            
             nome = JOptionPane.showInputDialog("Digite o nome: ");
             salario = Float.parseFloat(JOptionPane.showInputDialog("Digite o salario: "));
 
@@ -28,9 +34,8 @@ public class Main {
 
             lista.add(funcionario);
 
-            continua = Integer.parseInt(JOptionPane.showInputDialog("Deseja cadastrar um novo funcionário?\n"
-                    + "0 - Não\n"
-                    + "1 - Sim\n"));
+
+            count++;
         }
 
         BubbleSortCrescente(lista); //Método de ordenação crescente
