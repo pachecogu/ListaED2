@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Ordenacao {
 
-    public static void BubbleSortCrescente(ArrayList<Aluno> lista) {
+    public static void BubbleSortMediaCrescente(ArrayList<Aluno> lista) {
         int i, j, n;
         n = lista.size();
         for (i = 0; i < n; i++) {
@@ -19,6 +19,41 @@ public class Ordenacao {
             }
         }
     }
+    
+    public static void BubbleSortNota1Crescente(ArrayList<Aluno> lista) {
+        int i, j, n;
+        n = lista.size();
+        for (i = 0; i < n; i++) {
+            for (j = 0; j < n - 1; j++) {
+                if (lista.get(j).getNota1()> lista.get(j + 1).getNota1()) {
+                    Aluno aux = lista.get(j);
+                    lista.set(j, lista.get(j + 1));
+                    //vet[j] = vet[j + 1];
+                    lista.set(j + 1, aux);
+                    //vet[j + 1] = aux;
+                }
+            }
+        }
+    }    
+    
+    public static void BubbleSortNomeCrescente(ArrayList<Aluno> lista) {
+        int i, j, n;
+        n = lista.size();
+        for (i = 0; i < n; i++) {
+            for (j = 0; j < n - 1; j++) {
+            int cmp = lista.get(j).getNome().compareTo(lista.get(j+1).getNome());
+                if ( cmp > 0 ) {
+                    Aluno aux = lista.get(j);
+                    lista.set(j, lista.get(j + 1));
+                    //vet[j] = vet[j + 1];
+                    lista.set(j + 1, aux);
+                    //vet[j + 1] = aux;
+                }
+            }
+        }
+    }    
+    
+    
 //
 //    public static void BubbleSortDecrescente(ArrayList<Produto> lista) {
 //        //Ordem decrescente de salário

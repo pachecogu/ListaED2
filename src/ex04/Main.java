@@ -1,6 +1,8 @@
 package ex04;
 
-import static ex04.Ordenacao.BubbleSortCrescente;
+import static ex04.Ordenacao.BubbleSortMediaCrescente;
+import static ex04.Ordenacao.BubbleSortNomeCrescente;
+import static ex04.Ordenacao.BubbleSortNota1Crescente;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
@@ -28,7 +30,8 @@ public class Main {
             
             lista.add(aluno);
             
-            lista.get(count).setMedia(nota1, nota2);       
+            lista.get(count).setMedia(nota1, nota2);  
+            lista.get(count).setStatus(lista.get(count).getMedia());
 
             continua = Integer.parseInt(JOptionPane.showInputDialog("Deseja cadastrar um novo aluno?\n"
                     + "0 - Não\n"
@@ -36,15 +39,38 @@ public class Main {
             count++;
         }
 
-        BubbleSortCrescente(lista); //Ordenando alunos pela média
-
+        
+        BubbleSortMediaCrescente(lista); //Ordenando alunos pela média
         //Exibindo alunos pela média ponderada
         int i;
-        String resposta = " ";
+        String resposta = " Ordenados pela média ponderada \n";
         for (i = 0; i < lista.size(); i++) {
             resposta += i + 1 + " - " + lista.get(i).toString() + "\n";
         }
         JOptionPane.showMessageDialog(null, resposta);
+        
+        
+        BubbleSortNota1Crescente(lista); //Ordenando alunos pela nota1
+        //Exibindo alunos pela nota1
+        
+        resposta = " Ordenados pela nota1 \n";
+        for (i = 0; i < lista.size(); i++) {
+            resposta += i + 1 + " - " + lista.get(i).toString() + "\n";
+        }
+        JOptionPane.showMessageDialog(null, resposta);
+        
+        
+        BubbleSortNomeCrescente(lista); //Ordenando alunos reprovados por ordem alfabética
+        //Exibindo alunos pela nota1
+        
+        resposta = " Reprovados em ordem alfabética \n";
+        for (i = 0; i < lista.size(); i++) {
+            if(lista.get(i).getStatus() == false)
+            resposta += i + 1 + " - " + lista.get(i).toString() + "\n";
+        }
+        JOptionPane.showMessageDialog(null, resposta);
+        
+        
 
 //        //Quantas comparações pela busca binaria
 //        int desejado;

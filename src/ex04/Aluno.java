@@ -48,7 +48,7 @@ public class Aluno {
 
     @Override
     public String toString() {
-        return " Nome= " + this.nome + "   " + this.nota1 + "   " + this.nota2 + "   " + this.media;
+        return " Nome = " + this.nome + " | nota1 =  " + this.nota1 + " | nota2 =  " + this.nota2 + " | média =  " + this.media;
     }
 
 }
