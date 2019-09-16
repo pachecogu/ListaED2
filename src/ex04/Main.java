@@ -46,26 +46,6 @@ public class Main {
         }
         JOptionPane.showMessageDialog(null, resposta);
 
-//        //Quantas comparações pela busca binaria
-//        int desejado;
-//        desejado = Integer.parseInt(JOptionPane.showInputDialog("Digite o cod do produto desejado: "));
-//
-//        int countDesejado = NumeroDeComparacoesBuscaBinaria(lista, desejado);
-//        JOptionPane.showMessageDialog(null, "Realizadas " + countDesejado + " comparações para encontrar o produto pela busca binária.");
-//        
-//        //Quantas comparações pela busca sequencial
-//        desejado = Integer.parseInt(JOptionPane.showInputDialog("Digite o cod do produto desejado: "));
-//        
-//        countDesejado = NumeroDeComparacoesBuscaSequencial(lista, desejado);
-//        JOptionPane.showMessageDialog(null, "Realizadas " + countDesejado + " comparações para encontrar o produto pela busca sequencial.");
-//
-//        
-//        int i;
-//        String resposta = " ";
-//        for (i = 0; i < lista.size(); i++) {
-//            resposta += i + 1 + " - " + lista.get(i).toString() + "\n";
-//        }
-//        JOptionPane.showMessageDialog(null, resposta);
     }
 
 }
